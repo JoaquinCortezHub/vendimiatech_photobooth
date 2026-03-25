@@ -51,11 +51,12 @@ export default function StepRegistration({ onNext }: StepRegistrationProps) {
     const finalHandle = handle.startsWith("@") ? handle : `@${handle}`;
     setSubmitting(true);
 
-    fetch("/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: name.trim(), handle: finalHandle }),
-    }).catch(() => {});
+    // TODO: Re-enable spreadsheet registration
+    // fetch("/api/register", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({ name: name.trim(), handle: finalHandle }),
+    // }).catch(() => {});
 
     onNext({
       name: name.trim(),
